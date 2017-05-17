@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Advice
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/check-your-answers">Back</a>
+
+      <h1 class="heading-large">
+        Heading goes here
+      </h1>
+
+      {% if 'area-employment' in data['areas'] %}
+        <h2 class="heading-medium">Employment</h2>
+      {% endif %}
+      
+      {% if 'area-money' in data['areas'] %}
+        <h2 class="heading-medium">Money</h2>
+      {% endif %}
+      
+      {% if 'area-health' in data['areas'] %}
+        <h2 class="heading-medium">Health</h2>
+      {% endif %}
+      
+      {% if 'area-networks' in data['areas'] %}
+        <h2 class="heading-medium">Network</h2>
+      {% endif %}
+      
+      {% if 'area-housing' in data['areas'] %}
+        <h2 class="heading-medium">Housing</h2>
+      {% endif %}
+      
+      {% if 'area-well-being' in data['areas'] %}
+        <h2 class="heading-medium">Well-being</h2>
+      {% endif %}
+
+      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
+
+      <p>This paragraph has a link to <a href="https://www.kingston.gov.uk">find out more about this subject</a>.</p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Are you currently in work?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/areas">Back</a>
+
+      <h1 class="heading-large">Are you currently in work?</h1>
+
+      <form class="form" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Are you currently in work?</legend>
+      
+            <div class="multiple-choice">
+              <input id="employment-in-work-yes" name="employment-in-work" type="radio" value="true">
+              <label for="employment-in-work-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="employment-in-work-no" name="employment-in-work" type="radio" value="false">
+              <label for="employment-in-work-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -4,7 +4,7 @@
 
 module.exports = {
   // Service name used in header. Eg: 'Renew your passport'
-  serviceName: 'Service name goes here',
+  serviceName: 'Early intervention tool',
 
   // Default port that prototype runs on
   port: '3000',
@@ -16,7 +16,7 @@ module.exports = {
   useAutoStoreData: 'true',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: 'true',
+  useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPs on production
   useHttps: 'true',

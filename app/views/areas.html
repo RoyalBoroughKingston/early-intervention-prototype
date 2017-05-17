@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Which areas would you like help with? 
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-large">Which areas would you like help with? </h1>
+
+      <form class="form" method="post">
+        <div class="form-group">
+          <fieldset>
+            <legend class="visually-hidden">Which areas would you like help with?</legend>
+            <div class="multiple-choice">
+              <input id="area-1" name="areas" type="checkbox" value="area-housing">
+              <label for="area-1">Housing</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="area-2" name="areas" type="checkbox" value="area-money">
+              <label for="area-2">Money</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="area-3" name="areas" type="checkbox" value="area-health">
+              <label for="area-3">Health</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="area-4" name="areas" type="checkbox" value="area-well-being">
+              <label for="area-4">Well-being</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="area-5" name="areas" type="checkbox" value="area-employment">
+              <label for="area-5">Employment</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="area-6" name="areas" type="checkbox" value="area-networks">
+              <label for="area-6">Networks</label>
+            </div>
+          </fieldset>
+        </div>
+        
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

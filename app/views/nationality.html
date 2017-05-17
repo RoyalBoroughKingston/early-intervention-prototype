@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What is your nationality?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/age">Back</a>
+
+      <h1 class="heading-large">What is your nationality?</h1>
+
+      <form class="form" action="/check-your-answers" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">What is your nationality?</legend>
+      
+            <div class="multiple-choice">
+              <input id="nationalities-british" name="nationalities" type="radio" value="British">
+              <label for="nationalities-british">British (including English, Scottish, Welsh and Northern Irish)</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="nationalities-irish" name="nationalities" type="radio" value="Irish">
+              <label for="nationalities-irish">Irish</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="nationalities-other" name="nationalities" type="radio" value="Citizen of a different country">
+              <label for="nationalities-other">Citizen of a different country</label>
+            </div>
+      
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
