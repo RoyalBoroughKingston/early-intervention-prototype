@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Are you looking to move property?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/housing/property-status">Back</a>
+
+      <h1 class="heading-large">Are you looking to move property?</h1>
+
+      <form class="form" action="/housing/advice" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Are you looking for advice?</legend>
+      
+            <div class="multiple-choice">
+              <input id="housing-move-yes" name="housing-move" type="radio" value="true">
+              <label for="housing-move-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-move-no" name="housing-move" type="radio" value="false">
+              <label for="housing-move-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

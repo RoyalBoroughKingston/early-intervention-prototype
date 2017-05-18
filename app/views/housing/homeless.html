@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Are you homeless?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/{{ "employment/new-skills" if 'area-employment' in data['areas'] else "areas" }}">Back</a>
+
+      <h1 class="heading-large">Are you homeless?</h1>
+
+      <form class="form" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Are you homeless?</legend>
+      
+            <div class="multiple-choice">
+              <input id="housing-homeless-yes" name="housing-homeless" type="radio" value="yes">
+              <label for="housing-homeless-yes">Yes, I am currently homeless</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-homeless-at-risk" name="housing-homeless" type="radio" value="at-risk">
+              <label for="housing-homeless-at-risk">No, but I am at risk of becoming homeless in the next 30 days</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-homeless-no" name="housing-homeless" type="radio" value="no">
+              <label for="housing-homeless-no">No, I am not homeless</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

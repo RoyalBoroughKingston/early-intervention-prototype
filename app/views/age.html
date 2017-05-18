@@ -15,11 +15,12 @@
       <h1 class="heading-large">How old are you?
       </h1>
 
-      <form class="form" action="/nationality" method="post">
+      <form class="form" action="/disability" method="post">
 
-        <p>[Insert question content here]</p>
-
-        <p>[See <a href="https://govuk-elements.herokuapp.com/form-elements/">GOV.UK Elements</a> for examples]</p>
+        <div class="form-group">
+          <label class="form-label visually-hidden" for="age">How old are you?</label>
+          <input class="form-control" id="age" type="text" name="age">
+        </div>
 
         <div class="form-group">
           <input class="button" type="submit" value="Continue">

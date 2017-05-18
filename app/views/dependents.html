@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Do you have any dependent children?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/nationality">Back</a>
+
+      <h1 class="heading-large">Do you have any dependent children?</h1>
+
+      <form class="form" action="/check-your-answers" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Do you have any dependent children?</legend>
+      
+            <div class="multiple-choice">
+              <input id="dependents-yes" name="dependents" type="radio" value="true">
+              <label for="dependents-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="dependents-no" name="dependents" type="radio" value="false">
+              <label for="dependents-no">No</label>
+            </div>
+      
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

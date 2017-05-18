@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Do you have a disability?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/age">Back</a>
+
+      <h1 class="heading-large">Do you have a disability?</h1>
+
+      <form class="form" action="/nationality" method="post">
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Do you have a disability?</legend>
+      
+            <div class="multiple-choice">
+              <input id="disability-yes" name="disability" type="radio" value="true">
+              <label for="disability-yes">Yes</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="disability-no" name="disability" type="radio" value="false">
+              <label for="disability-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

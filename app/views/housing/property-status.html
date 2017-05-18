@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  What is your property status?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/areas">Back</a>
+
+      <h1 class="heading-large">What is your property status?</h1>
+
+      <form class="form" action="" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">What is your property status?</legend>
+
+            <div class="multiple-choice">
+              <input id="housing-property-own" name="housing-property" type="radio" value="own">
+              <label for="housing-property-own">I own and live in my property</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-property-shared" name="housing-property" type="radio" value="shared">
+              <label for="housing-property-shared">I have shared ownership of my property</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-property-private" name="housing-property" type="radio" value="private">
+              <label for="housing-property-private">I rent a property privately</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-property-social" name="housing-property" type="radio" value="social">
+              <label for="housing-property-social">I rent a property with a social landlord such as the council</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-property-family" name="housing-property" type="radio" value="family">
+              <label for="housing-property-family">I am living with family or friends</label>
+            </div>
+            <div class="multiple-choice" data-target="housing-property-other-detail">
+              <input id="housing-property-other" name="housing-property" type="radio" value="other">
+              <label for="housing-property-other">Other</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="housing-property-other-detail" aria-hidden="true">
+              <label class="form-label" for="housing-property-other-type">Other type of status</label>
+              <input class="form-control" type="text" id="housing-property-other-type" name="housing-property-other-type">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
