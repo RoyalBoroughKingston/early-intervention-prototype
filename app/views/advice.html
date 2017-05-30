@@ -18,6 +18,17 @@
 
       {% if 'area-employment' in data['areas'] %}
         <h2 class="heading-medium">Employment</h2>
+        
+        {% if data['employment-in-work'] == 'No' %}
+        
+        <p>Go to the job centre because you're unemployed.</p>
+        
+          {% if ((data['age'] >= '13') and (data['age'] <= '30')) and (data['employment-skills'] === 'Yes') %}
+            <h3>Princes Trust</h3>
+            <p><a href="https://www.princes-trust.org.uk/help-for-young-people/get-job/get-experience">Details</a></a></p>
+          {% endif %}
+        {% endif %}
+        
       {% endif %}
       
       {% if 'area-money' in data['areas'] %}
@@ -40,10 +51,9 @@
         <h2 class="heading-medium">Well-being</h2>
       {% endif %}
 
-      <p>This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.</p>
-
-      <p>This paragraph has a link to <a href="https://www.kingston.gov.uk">find out more about this subject</a>.</p>
-
+      {% if not data['areas']|length %}
+      <p>You didn't pick any areas to get advice on!</p>
+      {% endif %}
     </div>
   </div>
 </main>

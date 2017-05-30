@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Do you need help to pay your rent or mortgage?
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/housing/property-status">Back</a>
+
+      <h1 class="heading-large">Do you need help to pay your rent or mortgage?</h1>
+
+      <form class="form" action="/housing/move" method="post">
+
+        <div class="form-group">
+          <fieldset>
+      
+            <legend class="visually-hidden">Do you need help to pay your rent or mortgage?</legend>
+
+            <div class="multiple-choice">
+              <input id="housing-arrears-yes" name="housing-arrears" type="radio" value="Yes, I have arrears">
+              <label for="housing-arrears-yes">Yes, I have arrears</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-arrears-struggle" name="housing-arrears" type="radio" value="Yes, I struggle to make the payments">
+              <label for="housing-arrears-struggle">Yes, I struggle to make the payments</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="housing-arrears-no" name="housing-arrears" type="radio" value="No">
+              <label for="housing-arrears-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -14,7 +14,7 @@
 
       <h1 class="heading-large">Are you looking for a new career or to develop new skills?</h1>
 
-      <form class="form" action="/employment/new-skills" method="post">
+      <form class="form" action="/employment/end" method="post">
 
         <div class="form-group">
           <fieldset>
@@ -22,12 +22,12 @@
             <legend class="visually-hidden">Are you looking for a new career or to develop new skills?</legend>
       
             <div class="multiple-choice">
-              <input id="employment-in-work-yes" name="employment-in-work" type="radio" value="true">
-              <label for="employment-in-work-yes">Yes</label>
+              <input id="employment-skills-yes" name="employment-skills" type="radio" value="Yes" {{ checked('employment-skills', 'Yes') }}>
+              <label for="employment-skills-yes">Yes</label>
             </div>
             <div class="multiple-choice">
-              <input id="employment-in-work-no" name="employment-in-work" type="radio" value="false">
-              <label for="employment-in-work-no">No</label>
+              <input id="employment-skills-no" name="employment-skill" type="radio" value="No" {{ checked('employment-skills', 'No') }}>
+              <label for="employment-skill-no">No</label>
             </div>
           </fieldset>
         </div>

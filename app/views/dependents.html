@@ -22,11 +22,11 @@
             <legend class="visually-hidden">Do you have any dependent children?</legend>
       
             <div class="multiple-choice">
-              <input id="dependents-yes" name="dependents" type="radio" value="true">
+              <input id="dependents-yes" name="dependents" type="radio" value="Yes" {{ checked('dependents', 'Yes') }}>
               <label for="dependents-yes">Yes</label>
             </div>
             <div class="multiple-choice">
-              <input id="dependents-no" name="dependents" type="radio" value="false">
+              <input id="dependents-no" name="dependents" type="radio" value="No" {{ checked('dependents', 'No') }}>
               <label for="dependents-no">No</label>
             </div>
       

@@ -9,16 +9,17 @@
 <main id="content" role="main">
 
   <h1 class="heading-large">
-    Check your answers before sending your application
+    Check your answers before getting advice
   </h1>
 
+  {% if 'area-employment' in data['areas'] %}
   <table class="check-your-answers">
 
     <thead>
       <tr>
         <th colspan="2">
           <h2 class="heading-medium">
-            Organisations involved
+            Employment
           </h2>
         </th>
         <th>
@@ -27,91 +28,198 @@
     </thead>
 
     <tbody>
+
       <tr>
         <td>
-          Exporter
+          Are you currently in work?
         </td>
         <td>
-          Exporter name<br>
-          First line of address<br>
-          Second line of address<br>
-          Contact: Contact Name<br>
-          Tel: 01234 567 890<br>
-          Email: email@email.com
+          {{ data['employment-in-work'] }}
         </td>
         <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Exporter name</span>
+          <a href="/employment/in-work">
+            Change <span class="visuallyhidden">whether you are currently in work</span>
+          </a>
+        </td>
+      </tr>
+      
+      {% if data['employment-in-work'] == 'No' %}
+      
+      <tr>
+        <td>
+          How long have you been unemployed for?
+        </td>
+        <td>
+          {{ data['employment-duration'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/employment/duration">
+            Change <span class="visuallyhidden">how long you have been unemployed for</span>
+          </a>
+        </td>
+      </tr>
+      
+      {% endif %}
+
+      <tr>
+        <td>
+          Are you looking for a new career or to develop new skills?
+        </td>
+        <td>
+          {{ data['employment-skills'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/employment/new-skills">
+            Change <span class="visuallyhidden">whether you are looking for a new career or to develop new skills</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {% endif %}
+  
+  {% if 'area-housing' in data['areas'] %}
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Housing
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          Are you currently homeless?
+        </td>
+        <td>
+          {{ data['housing-homeless'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/housing/homeless">
+            Change <span class="visuallyhidden">whether you are currently homeless</span>
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          What is your property status?
+        </td>
+        <td>
+          {{ data['housing-property'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/housing/property-status">
+            Change <span class="visuallyhidden">your property status</span>
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          Do you need help to pay your rent or mortgage?
+        </td>
+        <td>
+          {{ data['housing-arrears'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/housing/arrears">
+            Change <span class="visuallyhidden">your property status</span>
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          Are you looking to move property?
+        </td>
+        <td>
+          {{ data['housing-move'] }}
+        </td>
+        <td class="change-answer">
+          <a href="/housing/move">
+            Change <span class="visuallyhidden">your property status</span>
+          </a>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  {% endif %}
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            About you
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>
+          How old are you?
+        </td>
+        <td>
+          {{ data['age'] }}
+        </td>
+        <td class="change-answer">
+          <a href="age">
+            Change <span class="visuallyhidden">whether you are currently in work</span>
           </a>
         </td>
       </tr>
       <tr>
         <td>
-          Producer
+          Do you have a disability?
         </td>
         <td>
-          Producer name
+          {{ data['disability'] }}
         </td>
         <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Producer name</span>
+          <a href="disability">
+            Change <span class="visuallyhidden">whether you have a disability</span>
           </a>
         </td>
       </tr>
       <tr>
         <td>
-          Site of export
+          What is your nationality?
         </td>
         <td>
-          Site of export name
+          {{ data['nationalities'] }}
         </td>
         <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Site of export name</span>
+          <a href="nationality">
+            Change <span class="visuallyhidden">your nationality</span>
           </a>
         </td>
       </tr>
       <tr>
         <td>
-          Importer
+          Do you have any dependent children?
         </td>
         <td>
-          Importer name<br>
-          First line of address<br>
-          Second line of address<br>
-          Contact: Contact Name<br>
-          Tel: 01234 567 890<br>
-          Email: email@email.com
+          {{ data['dependents'] }}
         </td>
         <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Importer name</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Recovery facilities
-        </td>
-        <td>
-          Recovery facilities name
-        </td>
-        <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Recovery facilities name</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Recovery site
-        </td>
-        <td>
-          Recovery site name
-        </td>
-        <td class="change-answer">
-          <a href="#">
-            Change <span class="visuallyhidden">Recovery site name</span>
+          <a href="dependents">
+            Change <span class="visuallyhidden">whether you have any dependent children</span>
           </a>
         </td>
       </tr>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Are you looking to move property?
+  Are you looking for housing advice?
 {% endblock %}
 
 {% block content %}
@@ -12,22 +12,22 @@
 
       <a class="link-back" href="/housing/property-status">Back</a>
 
-      <h1 class="heading-large">Are you looking to move property?</h1>
+      <h1 class="heading-large">Are you looking for housing advice?</h1>
 
       <form class="form" action="/housing/advice" method="post">
 
         <div class="form-group">
           <fieldset>
       
-            <legend class="visually-hidden">Are you looking to move property?</legend>
+            <legend class="visually-hidden">Are you looking for housing advice?</legend>
       
             <div class="multiple-choice">
-              <input id="housing-move-yes" name="housing-move" type="radio" value="true">
-              <label for="housing-move-yes">Yes</label>
+              <input id="housing-advice-repairs" name="housing-advice" type="checkbox" value="Repairs">
+              <label for="housing-advice-repairs">Repairs</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-move-no" name="housing-move" type="radio" value="false">
-              <label for="housing-move-no">No</label>
+              <input id="housing-advice-payments" name="housing-advice" type="checkbox" value="Payments">
+              <label for="housing-advice-payments">Payments</label>
             </div>
           </fieldset>
         </div>

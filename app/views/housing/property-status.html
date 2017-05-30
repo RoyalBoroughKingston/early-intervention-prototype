@@ -10,11 +10,11 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <a class="link-back" href="/areas">Back</a>
+      <a class="link-back" href="/housing/homeless">Back</a>
 
       <h1 class="heading-large">What is your property status?</h1>
 
-      <form class="form" action="" method="post">
+      <form class="form" action="/housing/property-status" method="post">
 
         <div class="form-group">
           <fieldset>
@@ -22,27 +22,27 @@
             <legend class="visually-hidden">What is your property status?</legend>
 
             <div class="multiple-choice">
-              <input id="housing-property-own" name="housing-property" type="radio" value="own">
+              <input id="housing-property-own" name="housing-property" type="radio" value="I own and live in my property">
               <label for="housing-property-own">I own and live in my property</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-property-shared" name="housing-property" type="radio" value="shared">
+              <input id="housing-property-shared" name="housing-property" type="radio" value="I have shared ownership of my property">
               <label for="housing-property-shared">I have shared ownership of my property</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-property-private" name="housing-property" type="radio" value="private">
+              <input id="housing-property-private" name="housing-property" type="radio" value="I rent a property privately">
               <label for="housing-property-private">I rent a property privately</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-property-social" name="housing-property" type="radio" value="social">
+              <input id="housing-property-social" name="housing-property" type="radio" value="I rent a property with a social landlord such as the council">
               <label for="housing-property-social">I rent a property with a social landlord such as the council</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-property-family" name="housing-property" type="radio" value="family">
+              <input id="housing-property-family" name="housing-property" type="radio" value="I am living with family or friends">
               <label for="housing-property-family">I am living with family or friends</label>
             </div>
             <div class="multiple-choice" data-target="housing-property-other-detail">
-              <input id="housing-property-other" name="housing-property" type="radio" value="other">
+              <input id="housing-property-other" name="housing-property" type="radio" value="Other">
               <label for="housing-property-other">Other</label>
             </div>
             <div class="panel panel-border-narrow js-hidden" id="housing-property-other-detail" aria-hidden="true">

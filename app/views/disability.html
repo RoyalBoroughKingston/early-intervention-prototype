@@ -21,11 +21,11 @@
             <legend class="visually-hidden">Do you have a disability?</legend>
       
             <div class="multiple-choice">
-              <input id="disability-yes" name="disability" type="radio" value="true">
+              <input id="disability-yes" name="disability" type="radio" value="Yes" {{ checked('disability', 'Yes') }}>
               <label for="disability-yes">Yes</label>
             </div>
             <div class="multiple-choice">
-              <input id="disability-no" name="disability" type="radio" value="false">
+              <input id="disability-no" name="disability" type="radio" value="No" {{ checked('disability', 'No') }}>
               <label for="disability-no">No</label>
             </div>
           </fieldset>

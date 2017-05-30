@@ -25,7 +25,7 @@ router.post('/areas', function (req, res) {
        res.redirect('/housing/homeless');
    }
    else if (selectedArea(req, 'area-money')) {
-       res.redirect('/money/homeless');
+       res.redirect('/money/');
    }
    else if (selectedArea(req, 'area-networks')) {
        res.redirect('/networks/homeless');
@@ -34,6 +34,7 @@ router.post('/areas', function (req, res) {
        res.redirect('/well-being/homeless');
    }
    else {
+       req.session.data['areas'] = [];
        res.redirect('/age');
    }
 });
@@ -41,7 +42,7 @@ router.post('/areas', function (req, res) {
 router.post('/employment/in-work', function (req, res) {
   var inWork = req.session.data['employment-in-work'];
    
-   if (inWork == 'true') {
+   if (inWork == 'Yes') {
        res.redirect('/employment/new-skills');
    }
    else {
@@ -49,7 +50,7 @@ router.post('/employment/in-work', function (req, res) {
    }
 });
 
-router.post('/employment/new-skills', function (req, res) {
+router.post('/employment/end', function (req, res) {
    if (selectedArea(req, 'area-housing')) {
        res.redirect('/housing/homeless');
    }
@@ -61,12 +62,36 @@ router.post('/employment/new-skills', function (req, res) {
 router.post('/housing/homeless', function (req, res) {
   var homeless = req.session.data['housing-homeless'];
    
-   if (homeless == 'yes') {
+   if (homeless == 'Yes') {
        res.redirect('/housing/contact');
    }
    else {
        res.redirect('/housing/property-status');
    }
+});
+
+router.post('/housing/property-status', function (req, res) {
+  var property = req.session.data['housing-property'];
+   
+   if (property == 'Other' || property == "I am living with family or friends") {
+       res.redirect('/housing/move');
+   }
+   else {
+       res.redirect('/housing/arrears');
+   }
+});
+
+router.post('/housing/advice', function (req, res) {
+   if (selectedArea(req, 'area-money')) {
+       res.redirect('/money/');
+   }
+   else {
+       res.redirect('/age');
+   }
+});
+
+router.get('/money/', function (req, res) {
+   res.redirect('/age');
 });
 
 module.exports = router

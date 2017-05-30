@@ -22,11 +22,11 @@
             <legend class="visually-hidden">Are you currently in work?</legend>
       
             <div class="multiple-choice">
-              <input id="employment-in-work-yes" name="employment-in-work" type="radio" value="true">
+              <input id="employment-in-work-yes" name="employment-in-work" type="radio" value="Yes" {{ checked('employment-in-work', 'Yes') }}>
               <label for="employment-in-work-yes">Yes</label>
             </div>
             <div class="multiple-choice">
-              <input id="employment-in-work-no" name="employment-in-work" type="radio" value="false">
+              <input id="employment-in-work-no" name="employment-in-work" type="radio" value="No" {{ checked('employment-in-work', 'No') }}>
               <label for="employment-in-work-no">No</label>
             </div>
           </fieldset>

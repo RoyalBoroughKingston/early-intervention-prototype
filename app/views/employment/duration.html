@@ -22,12 +22,16 @@
             <legend class="visually-hidden">How long have you been unemployed for?</legend>
       
             <div class="multiple-choice">
-              <input id="employment-in-work-yes" name="employment-in-work" type="radio" value="true">
-              <label for="employment-in-work-yes">Yes</label>
+              <input id="employment-duration-one" name="employment-duration" type="radio" value="Less than 1 month" {{ checked('employment-duration', 'Less than 1 month') }}>
+              <label for="employment-duration-one">Less than 1 month</label>
             </div>
             <div class="multiple-choice">
-              <input id="employment-in-work-no" name="employment-in-work" type="radio" value="false">
-              <label for="employment-in-work-no">No</label>
+              <input id="employment-duration-six" name="employment-duration" type="radio" value="1 to 6 months" {{ checked('employment-duration', '1 to 6 months') }}>
+              <label for="employment-duration-six">1 to 6 months</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="employment-duration-six-plus" name="employment-duration" type="radio" value="More than 6 months" {{ checked('employment-duration', 'More than 6 months') }}>
+              <label for="employment-duration-six-plus">More than 6 months</label>
             </div>
           </fieldset>
         </div>

@@ -10,7 +10,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <a class="link-back" href="/housing/property-status">Back</a>
+      <a class="link-back" href="/{{ "housing/property-status" if ('Other' == data['housing-property']) or ('I am living with family or friends' == data['housing-property']) else "housing/arrears" }}">Back</a>
 
       <h1 class="heading-large">Are you looking to move property?</h1>
 
@@ -19,14 +19,14 @@
         <div class="form-group">
           <fieldset>
       
-            <legend class="visually-hidden">Are you looking for advice?</legend>
+            <legend class="visually-hidden">Are you looking to move property?</legend>
       
             <div class="multiple-choice">
-              <input id="housing-move-yes" name="housing-move" type="radio" value="true">
+              <input id="housing-move-yes" name="housing-move" type="radio" value="Yes">
               <label for="housing-move-yes">Yes</label>
             </div>
             <div class="multiple-choice">
-              <input id="housing-move-no" name="housing-move" type="radio" value="false">
+              <input id="housing-move-no" name="housing-move" type="radio" value="No">
               <label for="housing-move-no">No</label>
             </div>
           </fieldset>
