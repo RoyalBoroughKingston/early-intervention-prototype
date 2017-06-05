@@ -1,11 +1,13 @@
 {% extends "govuk_template.html" %}
 
+{% set global_header_text = 'Welcome to Kingston Council' %}
+{% set homepage_url = '/' %}
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
 
 {% block cookie_message %}
-  <p>{{cookieText | safe }}</p>
 {% endblock %}
 
 {% block proposition_header %}

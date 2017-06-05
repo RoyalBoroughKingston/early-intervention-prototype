@@ -13,26 +13,111 @@
       <a class="link-back" href="/check-your-answers">Back</a>
 
       <h1 class="heading-large">
-        Heading goes here
+        Get some help
       </h1>
+
+      <p>List below are some organisations that may be able to help you or provide assistance.</p>
+
+<!-- 
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        -->
 
       {% if 'area-employment' in data['areas'] %}
         <h2 class="heading-medium">Employment</h2>
         
-        {% if data['employment-in-work'] == 'No' %}
+        {% if data['age'] < 65 %}
         
-        <p>Go to the job centre because you're unemployed.</p>
-        
-          {% if ((data['age'] >= '13') and (data['age'] <= '30')) and (data['employment-skills'] === 'Yes') %}
-            <h3>Princes Trust</h3>
-            <p><a href="https://www.princes-trust.org.uk/help-for-young-people/get-job/get-experience">Details</a></a></p>
+          {% if data['employment-in-work'] == 'No' %}
+          
+          <p>Your local job centre can help you. <a href="http://los.direct.gov.uk/">Find your nearest job centre</a>.</p>
+          
+          <h3 class="heading-small">Kingston Libraries Job Club</h3>
+          <p>IT support for job seekers. Help with CVs, job applications, Universal Job Match and basic IT skills.</p>
+          <p><a href="https://www.kingston.gov.uk/info/200208/libraries/298/branch_kingston_library/2">Details</a></p>
+          
+            {% if ((data['age'] >= '16') and (data['age'] <= '25')) and (data['employment-skills'] === 'Yes') %}
+              <h3 class="heading-small">Princes Trust</h3>
+              <p>If you are 16 to 25 and want to gain experience, skills, training and the confidence to help you into work.</p>
+              <p><a href="https://www.princes-trust.org.uk/help-for-young-people/get-job/get-experience">Details</a></a></p>
+            {% endif %}
+            
+            {% if data['employment-skills'] == 'Yes'%}
+    
+            <h3 class="heading-small">National Careers Service</h3>
+            <p>Advice on applications, interview techniques and writing an effective CV. You can get help to search for your first job, get back into work or change career direction.</p>
+            <p><a href="https://nationalcareersservice.direct.gov.uk/">Details</a></p>
+          
+            {% endif %}
+            
           {% endif %}
+          
+          {% if data['disability'] == 'Yes' %}
+            <h3 class="heading-small">Balance</h3>
+            <p>Supports people with mental health and disability to gain experience and employment.</p>
+            <p><a href="http://www.balance-cic.com/balance-services/employment-support-team/">Details</a></p>
+            
+            <h3 class="heading-small">Disability Employment Advisor</h3>
+            <p>Provides support to people with health condition or a disability that affects your ability to work,</p>
+            <p><a href="http://www.jobcentreguide.co.uk/jobcentre-plus-guide/34/disability-employment-advisors">Details</a></p>
+          {% endif %}
+          
+          {% if data['employment-skills'] == 'Yes'%}
+    
+            {% if (data['age'] >= '16') and (data['age'] <= '25') %}
+              <h3 class="heading-small">Unilever (Apprenticeships)</h3>
+              <p>Offers an apprenticeship schemes in various areas of the business.</p>
+              <p><a href="https://www.unilever.co.uk/careers/apprenticeships/">Details</a></p>
+            {% endif %}
+          
+          {% endif %}
+          
+          <h3 class="heading-small">Pinnacle People</h3>
+          <p>Provides skills and experience to people to enable long lasting employment.</p>
+          <p><a href="http://www.pinnaclepeople.co.uk/pinnacle-recruitment/">Details</a></p>
+        {% endif %}
+        
+        {% if (data['age'] >= '65') %}
+          <h3 class="heading-small">University of 3rd Age</h3>
+          <p>Life-enhancing and life-changing opportunities for retired and semi-retired people who come together and learn together,</p>
+          <p><a href="https://www.u3a.org.uk/">Details</a></a></p>
+        {% endif %}
+        
+        {% if data['employment-skills'] == 'Yes'%}
+          <h3 class="heading-small">ICS Learn</h3>
+          <p>Various online learning courses to gain qualifications.</p>
+          <p><a href="https://www.icslearn.co.uk/">Details</a></p>
         {% endif %}
         
       {% endif %}
       
       {% if 'area-money' in data['areas'] %}
         <h2 class="heading-medium">Money</h2>
+
+        <h3 class="heading-small">Debt Counsellors Charitable Trust</h3>
+        <p></p>
+        <p><a href="https://helplines.org/helplines/the-debt-counsellors-charitable-trust/">Details</a></p>
+        
+        <h3 class="heading-small">Debt Advise Foundation</h3>
+        <p></p>
+        <p><a href="http://www.debtadvicefoundation.org/">Details</a></p>
+        
+        <h3 class="heading-small">National Debt Line</h3>
+        <p></p>
+        <p><a href="https://www.nationaldebtline.org/">Details</a></p>
+        
+        <h3 class="heading-small">Step Change Debt</h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small">Pay Plan</h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small">Kingston & New Malden Debt Centre</h3>
+        <p></p>
+        <p><a href="">Details</a></p>
       {% endif %}
       
       {% if 'area-health' in data['areas'] %}
@@ -45,6 +130,42 @@
       
       {% if 'area-housing' in data['areas'] %}
         <h2 class="heading-medium">Housing</h2>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
+        
+        <h3 class="heading-small"></h3>
+        <p></p>
+        <p><a href="">Details</a></p>
       {% endif %}
       
       {% if 'area-well-being' in data['areas'] %}

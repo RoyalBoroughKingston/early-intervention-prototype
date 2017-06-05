@@ -10,6 +10,10 @@ $path: "/public/images/";
 @import 'patterns/check-your-answers';
 @import 'patterns/task-list';
 
+// Override the govuk_frontend_toolkit's font stack
+// https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_font_stack.scss#L13
+$toolkit-font-stack: $Helvetica-Regular;
+
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
 .govuk-related-items {
@@ -29,3 +33,73 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+* {
+    font-family: $toolkit-font-stack !important;
+  }
+
+html {
+  background-color: #fff;
+}
+
+#global-header,
+#global-header .header-wrapper {
+  background: #162655;
+}
+//#global-header #logo,
+//#global-header .header-proposition #proposition-name,
+//#global-header .header-proposition #proposition-link a, #global-header .header-proposition #proposition-links a {
+//  color: #009B67;
+//}
+//#global-header #logo {
+//    background: url(https://www.sutton.gov.uk/site/styles/css_img/logo-sutton.png) no-repeat 0 40%;
+//    padding-left: 73px;
+//    min-height: 73px;
+//    padding-top: 37px;
+//    font-size: 40px;
+//}
+
+#global-header {
+  padding-top: 5.2em;
+  padding-bottom: 5.2em;
+}
+
+#global-header-bar,
+#global-cookie-message,
+#proposition-name,
+.copyright,
+.open-government-licence {
+  display: none !important;
+}
+#footer,
+#footer .footer-wrapper {
+  background: #f4f3f0;
+  border-top: 0;
+}
+.footer-admin { 
+  font-size: 16px;
+  color: #fff; 
+  padding-top: 2em;
+  margin-left: 10em;
+}
+.footer-meta-inner img {
+  float: left;
+}
+#global-header #logo:hover,
+#global-header #logo:focus {
+  border-bottom-color: transparent;
+}
+
+@media (min-width: 641px) {
+  #footer .footer-meta .footer-meta-inner {
+      width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  #global-header.with-proposition .header-wrapper .header-proposition {
+    width: 33%;
+  }
+  #global-header.with-proposition .header-wrapper .header-global {
+   width: 67%; 
+  }
+}
