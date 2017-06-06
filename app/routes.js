@@ -94,4 +94,24 @@ router.get('/money/', function (req, res) {
    res.redirect('/age');
 });
 
+router.get('/advice', function (req, res) {
+   var session_data = JSON.stringify(req.session.data);
+
+   var url_data = encodeURIComponent(Buffer.from(session_data).toString('base64'));
+
+   res.render('advice', { "url_data": url_data });
+});
+
+router.get('/hydrate', function (req, res) {
+   var session_data = decodeURIComponent(req.query._d);
+
+   var buf = Buffer.from(session_data, 'base64').toString('ascii');
+
+   var data = JSON.parse(buf);
+
+   req.session.data = data;
+
+   res.redirect('check-your-answers');
+});
+
 module.exports = router

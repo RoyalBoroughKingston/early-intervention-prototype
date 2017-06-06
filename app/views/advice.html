@@ -175,6 +175,11 @@
       {% if not data['areas']|length %}
       <p>You didn't pick any areas to get advice on!</p>
       {% endif %}
+      
+      <div class="form-group">
+        <a href="hydrate?_d={{ url_data | safe }}" class="button">Bookmark this link to come back later</a>
+      </div>
+      
     </div>
   </div>
 </main>
