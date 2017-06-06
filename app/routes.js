@@ -20,27 +20,27 @@ router.get('/', function (req, res) {
 // add your routes here
 
 router.post('/areas', function (req, res) {
-   if (selectedArea(req, 'area-employment')) {
+   if (selectedArea(req, 'Employment')) {
        res.redirect('/employment/in-work');
    }
-   else if (selectedArea(req, 'area-health')) {
+   else if (selectedArea(req, 'Health')) {
        res.redirect('/health/homeless');
    }
-   else if (selectedArea(req, 'area-housing')) {
+   else if (selectedArea(req, 'Housing')) {
        res.redirect('/housing/homeless');
    }
-   else if (selectedArea(req, 'area-money')) {
+   else if (selectedArea(req, 'Money')) {
        res.redirect('/money/');
    }
-   else if (selectedArea(req, 'area-networks')) {
+   else if (selectedArea(req, 'Networks')) {
        res.redirect('/networks/homeless');
    }
-   else if (selectedArea(req, 'area-well-being')) {
+   else if (selectedArea(req, 'Well being')) {
        res.redirect('/well-being/homeless');
    }
    else {
        req.session.data['areas'] = [];
-       res.redirect('/age');
+       res.render('areas', { "error": true });
    }
 });
 
@@ -56,7 +56,7 @@ router.post('/employment/in-work', function (req, res) {
 });
 
 router.post('/employment/end', function (req, res) {
-   if (selectedArea(req, 'area-housing')) {
+   if (selectedArea(req, 'Housing')) {
        res.redirect('/housing/homeless');
    }
    else {
@@ -87,7 +87,7 @@ router.post('/housing/property-status', function (req, res) {
 });
 
 router.post('/housing/advice', function (req, res) {
-   if (selectedArea(req, 'area-money')) {
+   if (selectedArea(req, 'Money')) {
        res.redirect('/money/');
    }
    else {

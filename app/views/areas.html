@@ -11,35 +11,54 @@
     <div class="column-two-thirds">
 
       <a class="link-back" href="/">Back</a>
+      
+      {% if error %}
+      
+      <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          Message to alert the user to a problem goes here
+        </h1>
+      
+        <p>To use this service you must pick one or more areas to receive advice on.</p>
 
+      </div>
+      
+      {% endif %}
+      
       <h1 class="heading-large">Which areas would you like help with? </h1>
 
       <form class="form" method="post">
-        <div class="form-group">
+        <div class="form-group {{ "form-group-error" if error }}">
           <fieldset>
-            <legend class="visually-hidden">Which areas would you like help with?</legend>
+            <legend class="visually-hidden" id="area-picker">Which areas would you like help with?</legend>
+            {% if error %}
+            <p class="error-message">
+              You must choose at least one area you would like advice on.
+            </p>
+            {% endif %}
+            
             <div class="multiple-choice">
-              <input id="area-5" name="areas" type="checkbox" value="area-employment">
+              <input id="area-5" name="areas" type="checkbox" value="Employment">
               <label for="area-5">Employment</label>
             </div>
             <!-- div class="multiple-choice">
-              <input id="area-3" name="areas" type="checkbox" value="area-health">
+              <input id="area-3" name="areas" type="checkbox" value="Health">
               <label for="area-3">Health</label>
             </div -->
             <div class="multiple-choice">
-              <input id="area-1" name="areas" type="checkbox" value="area-housing">
+              <input id="area-1" name="areas" type="checkbox" value="Housing">
               <label for="area-1">Housing</label>
             </div>
             <div class="multiple-choice">
-              <input id="area-2" name="areas" type="checkbox" value="area-money">
+              <input id="area-2" name="areas" type="checkbox" value="Money">
               <label for="area-2">Money</label>
             </div>
             <!-- div class="multiple-choice">
-              <input id="area-6" name="areas" type="checkbox" value="area-networks">
+              <input id="area-6" name="areas" type="checkbox" value="Networks">
               <label for="area-6">Networks</label>
             </div>
             <div class="multiple-choice">
-              <input id="area-4" name="areas" type="checkbox" value="area-well-being">
+              <input id="area-4" name="areas" type="checkbox" value="Well being">
               <label for="area-4">Well-being</label>
             </div -->
           </fieldset>

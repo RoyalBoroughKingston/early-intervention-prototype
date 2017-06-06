@@ -11,8 +11,19 @@
   <h1 class="heading-large">
     Check your answers before getting advice
   </h1>
+  
+  {% if not data['areas']|length %}
+    <p>You didn't pick any areas to get advice on.</p>
+  {% else %}
+    <p>You asked for advice in the following areas:</p>
+    <ul class="list list-bullet">
+      {% for area in data['areas'] %}
+      <li>{{ area }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
-  {% if 'area-employment' in data['areas'] %}
+  {% if 'Employment' in data['areas'] %}
   <table class="check-your-answers">
 
     <thead>
@@ -78,7 +89,7 @@
   </table>
   {% endif %}
   
-  {% if 'area-housing' in data['areas'] %}
+  {% if 'Housing' in data['areas'] %}
   <table class="check-your-answers">
 
     <thead>
