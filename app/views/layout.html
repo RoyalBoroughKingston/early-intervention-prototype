@@ -1,7 +1,6 @@
 {% extends "govuk_template.html" %}
 
 {% set global_header_text = 'Welcome to Kingston Council' %}
-{% set homepage_url = '/' %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -12,7 +11,7 @@
 
 {% block inside_header %}
 <div class="rbk-header-logo">
-  <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="rbk-logo" class="content">
+  <a href="{{ homepage_url|default('https://www.kingston.gov.uk') }}" title="{{ logo_link_title|default('Go to the Kingston Council homepage') }}" id="rbk-logo" class="content">
     <div class="rbk-header-logo-image">
       <img src="/public/images/rbk.svg">
     </div>

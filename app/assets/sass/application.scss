@@ -84,7 +84,9 @@ svg:not(:root) {
     height: 14.25em;
     vertical-align: middle;
     width: 14.25em;
-    //margin-bottom: -6px;
+  }
+  #rbk-logo {
+    text-decoration: none;
   }
   .rbk-header-logo-text {
     display: inline-block;
