@@ -1,6 +1,11 @@
 var express = require('express')
 var router = express.Router()
 
+var NotifyClient = require('notifications-node-client').NotifyClient
+var notifyApiKey = process.env.NOTIFY_API_KEY
+var notifyClient = new NotifyClient(notifyApiKey)
+var notifyEmailTemplateId = '02e7cb13-6825-46cd-923d-b6ef4182b05a'
+
 var selectedArea = function (req, area) {
     var areas = req.session.data['areas'] || [];
     
@@ -94,12 +99,20 @@ router.get('/money/', function (req, res) {
    res.redirect('/age');
 });
 
-router.get('/advice', function (req, res) {
+router.post('/save', function (req, res) {
    var session_data = JSON.stringify(req.session.data);
-
    var url_data = encodeURIComponent(Buffer.from(session_data).toString('base64'));
+   
+   var personalisation = { 
+       'return_url': 'https://rbk-early-intervention-1.herokuapp.com/hydrate?_d=' + url_data
+   };
+   
+   var emailAddress = req.session.data['user-email'];
+   notifyClient.sendEmail(notifyEmailTemplateId, emailAddress, personalisation);
 
-   res.render('advice', { "url_data": url_data });
+    req.session.data['saved'] = true;
+
+   res.render('save');
 });
 
 router.get('/hydrate', function (req, res) {

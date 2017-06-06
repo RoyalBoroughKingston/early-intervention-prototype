@@ -176,9 +176,21 @@
       <p>You didn't pick any areas to get advice on!</p>
       {% endif %}
       
-      <div class="form-group">
-        <a href="hydrate?_d={{ url_data | safe }}" class="button">Bookmark this link to come back later</a>
-      </div>
+      {% if not data['saved'] %}
+      <h2 class="heading-medium">Save your answers</h2>
+      <form class="form" action="save" method="post">
+        <p>To return to this advice later, please enter your email address below.</p>
+        
+        <div class="form-group">
+          <label class="form-label" for="user-email">Email address</label>
+          <input class="form-control" name="user-email" type="text" id="user-email">
+        </div>
+        
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+      </form>
+      {% endif %}
       
     </div>
   </div>
