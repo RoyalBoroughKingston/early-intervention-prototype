@@ -10,6 +10,19 @@
 {% block cookie_message %}
 {% endblock %}
 
+{% block inside_header %}
+<div class="rbk-header-logo">
+  <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="rbk-logo" class="content">
+    <div class="rbk-header-logo-image">
+      <img src="/public/images/rbk.svg">
+    </div>
+    <div class="rbk-header-logo-text">
+      Welcome to <span>Kingston Council</span>
+    </div>
+  </a>
+</div>
+{% endblock %}
+
 {% block proposition_header %}
 
   <div class="header-proposition">

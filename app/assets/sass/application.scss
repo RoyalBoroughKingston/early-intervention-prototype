@@ -58,19 +58,50 @@ html {
 //    padding-top: 37px;
 //    font-size: 40px;
 //}
-
-#global-header {
-  padding-top: 5.2em;
-  padding-bottom: 5.2em;
+#global-header .header-wrapper {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #global-header-bar,
 #global-cookie-message,
-#proposition-name,
 .copyright,
-.open-government-licence {
+.open-government-licence,
+.header-logo {
   display: none !important;
 }
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.rbk-header-logo {
+  @extend .header-logo;
+  display: block !important;
+  .rbk-header-logo-image {
+    color: #162655;
+    display: inline-block;
+    height: 14.25em;
+    vertical-align: middle;
+    width: 14.25em;
+    //margin-bottom: -6px;
+  }
+  .rbk-header-logo-text {
+    display: inline-block;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    padding: 1.0rem 0 0 1.1em;
+    vertical-align: middle;
+    color: #fff;
+    span {
+      display: block;
+      font-weight: 700;
+    }
+  }
+}
+
 #footer,
 #footer .footer-wrapper {
   background: #f4f3f0;

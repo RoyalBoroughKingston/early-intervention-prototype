@@ -1,4 +1,5 @@
-<svg viewBox="0 0 228 228" xml:space="preserve" enable-background="new 0 0 228 228">
+<?xml version="1.0"?>
+<svg viewBox="0 0 228 228" xml:space="preserve" enable-background="new 0 0 228 228" xmlns="http://www.w3.org/2000/svg">
                             <g id="svg_logo" enable-background="new 0 0 228 228" xml:space="preserve">
                                 <polygon id="logo__background" fill="#FFFFFF" points="185,228 215,60.3 0,0 0,228 "></polygon>
                                 <path id="logo__path" fill="currentColor" d="M33.3,165c-0.2,0-0.4,0-0.6,0s-0.4,0-0.6,0s-0.4,0-0.6,0s-0.3,0-0.5,0.1
