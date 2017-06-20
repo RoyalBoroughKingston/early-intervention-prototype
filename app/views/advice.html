@@ -18,12 +18,6 @@
 
       <p>List below are some organisations that may be able to help you or provide assistance.</p>
 
-<!-- 
-        <h3 class="heading-small"></h3>
-        <p></p>
-        <p><a href="">Details</a></p>
-        -->
-
       {% if 'Employment' in data['areas'] %}
         <h2 class="heading-medium">Employment</h2>
         
@@ -131,9 +125,21 @@
       {% if 'Housing' in data['areas'] %}
         <h2 class="heading-medium">Housing</h2>
         
+        {% if (data['age'] >= 60) and (data['housing-move'] == 'Yes') %}
+        
         <h3 class="heading-small">Sheltered Housing</h3>
         <p>Sheltered housing and extra care sheltered housing can enable independant living in a safe friendly environment.</p>
         <p><a href="https://www.kingston.gov.uk/info/200184/housing_for_older_and_vulnerable_people/145/sheltered_housing_and_how_to_apply">Details</a></p>
+        
+          {% if data['housing-property'] === 'I rent a property with a social landlord such as the council' %}
+
+          <h3 class="heading-small">Seaside and Country</h3>
+          <p>aged 60 or over and applying as a single person; aged 60 or over and applying as a two-person household with their partner, joint tenant or registered carer </p>
+          <p><a href="https://hmlive.homeconnections.org.uk/housingmoves/Welcome.aspx?pid=55">Details</a></p>
+
+          {% endif %}
+        
+        {% endif %}
         
         <h3 class="heading-small">Joel Community Shelter</h3>
         <p>Night shelter for people who are sleeping rough.</p>
@@ -158,10 +164,6 @@
         <h3 class="heading-small">Housing Moves</h3>
         <p>If you have a social landlord property you can apply to do a house swap with some-one in another social landlord property in London.</p>
         <p><a href="http://www.housingmoves.org/">Details</a></p>
-        
-        <h3 class="heading-small">Seaside and Country</h3>
-        <p>aged 60 or over and applying as a single person; aged 60 or over and applying as a two-person household with their partner, joint tenant or registered carer </p>
-        <p><a href="https://hmlive.homeconnections.org.uk/housingmoves/Welcome.aspx?pid=55">Details</a></p>
         
         <h3 class="heading-small">Shared Lives (Supported Accommodation)</h3>
         <p></p>
